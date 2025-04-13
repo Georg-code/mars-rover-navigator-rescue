@@ -22,7 +22,7 @@ const RoverDetection = () => {
       const formData = new FormData();
       formData.append('image', file);
       
-      // Call the rover detection API with the updated URL
+      // Call the rover detection API with the correct URL
       const response = await fetch('http://127.0.0.1:8000/detect-rover/', {
         method: 'POST',
         body: formData,
