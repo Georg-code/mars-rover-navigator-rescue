@@ -4,7 +4,7 @@ import MainLayout from '@/components/layout/MainLayout';
 import SectionTitle from '@/components/ui/SectionTitle';
 import RoverDetectionForm from '@/components/rover/RoverDetectionForm';
 import RoverDetectionResult from '@/components/rover/RoverDetectionResult';
-import { Search, InfoCircle } from 'lucide-react';
+import { Search, Info } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
 import DataCard from '@/components/ui/DataCard';
@@ -22,8 +22,8 @@ const RoverDetection = () => {
       const formData = new FormData();
       formData.append('image', file);
       
-      // Call the rover detection API
-      const response = await fetch('/detect-rover/', {
+      // Call the rover detection API with the updated URL
+      const response = await fetch('http://127.0.0.1:8000/detect-rover/', {
         method: 'POST',
         body: formData,
       });
@@ -88,7 +88,7 @@ const RoverDetection = () => {
           />
           
           <Button variant="outline" size="sm" className="self-start">
-            <InfoCircle className="h-4 w-4 mr-2" />
+            <Info className="h-4 w-4 mr-2" />
             How it works
           </Button>
         </div>
